@@ -1,0 +1,20 @@
+    insertSort() {
+        let numArray = [2, 8, 5, 5, 3, 6, 10, 7, 1, 9];
+        let outerIdx = 1;
+        let innerIdx = 0;
+        let temIdx = 0;
+        let len = numArray.length;
+        while(outerIdx < len) {
+            innerIdx = outerIdx - 1;
+            temIdx = 0;
+            while (temIdx <= innerIdx) {
+                if (numArray[outerIdx] < numArray[temIdx]) {
+                    numArray[outerIdx] ^= numArray[temIdx];
+                    numArray[temIdx]   ^= numArray[outerIdx];
+                    numArray[outerIdx] ^= numArray[temIdx];
+                }
+                temIdx ++;
+            }
+            outerIdx ++;
+        }
+    }
